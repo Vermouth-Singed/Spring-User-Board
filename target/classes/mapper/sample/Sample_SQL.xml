@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sample">	
+	<select id="getUserList" resultType="first.sample.vo.UserVO" parameterType="hashmap">
+		SELECT *
+		FROM (
+			SELECT @curRank := @curRank +1 rank, user_id, user_name, 
+						date_format(update_date,'%Y-%m-%d %H:%i') update_date
+			FROM user_list, (SELECT @curRank := 0) r
+			<choose>
+				<when test="user_id != null and user_password != null">
+					WHERE user_id = #{user_id} AND user_password = PASSWORD(#{user_password})
+				</when>
+				<when test="user_id != null">
+					WHERE user_id = #{user_id}
+				</when>
+			</choose>
+			ORDER BY update_date DESC, user_id
+		) list
+		WHERE rank BETWEEN #{first} AND #{last}
+	</select>
+	
+	<select id="getUserTotalSize" resultType="integer" parameterType="hashmap">
+		SELECT COUNT(1)
+		FROM user_list
+	</select>
+	
+	<delete id="deleteUserList" parameterType="hashmap">
+		DELETE
+		FROM user_list
+		WHERE user_id IN 
+		<foreach collection="user_list" item="item"  open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<update id="updateUser" parameterType="hashmap">
+		UPDATE user_list SET
+		
+		<if test="user_password != ''">
+			user_password = PASSWORD(#{user_password}),
+		</if>
+		
+		user_name = #{user_name}
+		WHERE user_id = #{user_id}
+	</update>
+	
+	<insert id="insertUser" parameterType="hashmap">
+		INSERT INTO user_list(user_id, user_password, user_name, register_date)
+		VALUES(#{user_id}, PASSWORD(#{user_password}), #{user_name}, now())
+	</insert>
+</mapper>
