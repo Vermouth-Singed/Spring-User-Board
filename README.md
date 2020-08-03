@@ -1,10 +1,15 @@
 # 프로젝트 세팅
 ## - 프로젝트 생성
-1. Project Update
-2. jdk 1.7 & Tomcat 7.0
-3. Edit Web Module Path '/'
-4. Server Start
-5. Success Image
+1. project import from git
+2. set directory to local workspace (default : C:\Users\user\git\Spring-User-Board)
+3. import as general project
+4. Project -> Configure -> Convert to Maven Project
+5. Project -> Properties -> Java Build Path -> Library -> Add Library -> Server Runtime -> Apache Tomcat v7.0 -> Apply
+6. Targeted Runtimes -> Check Apache Tomcat v7.0 -> Apply and Close
+7. Server -> Add and Remove
+8. Edit Web Module Path '/'
+9. Server Start!
+10. voilà!
 ![시작](https://user-images.githubusercontent.com/24692694/88566472-04490e80-d071-11ea-8993-d2ccd162131f.png)
 
 ## - 메이븐
