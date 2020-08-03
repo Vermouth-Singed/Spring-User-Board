@@ -13,7 +13,7 @@
 ## - 데이터베이스 (MySQL)
 1. context-datasource.xml 파일 수정
 2. Time Server Zone 은 Asia/Seoul
-3. table 생성 쿼리 및 data insert 문 첨부
+3. table create 쿼리 및 data insert 문 첨부
 
 # 화면 설명
 ## - 로그인
