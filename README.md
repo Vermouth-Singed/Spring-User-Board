@@ -1,6 +1,6 @@
 # 프로젝트 세팅
 ## - 프로젝트 생성
-1. project import from git
+1. import project from git
 2. set directory to local workspace (default : C:\Users\user\git\Spring-User-Board)
 3. import as general project
 4. Project -> Configure -> Convert to Maven Project
