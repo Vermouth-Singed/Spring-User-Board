@@ -45,7 +45,8 @@
 ![수정](https://user-images.githubusercontent.com/24692694/88569727-d3b7a380-d075-11ea-943f-09531201a896.png)
 1. 수정하고 싶은 줄 더블 클릭 시 수정창 생성
 2. '수정' 버튼 클릭하거나 엔터 누르면 실행
-3. v-show 와 v-if 로 구별
+3. v-if 사용해서 데이터 전송 안하면 초기화
+4. 이름 텍스트에 Value 를 Bind 하고 데이터 전송 시 ref 활용
 
 ## - 삭제
 ![삭제](https://user-images.githubusercontent.com/24692694/88569452-6ad02b80-d075-11ea-940b-fa28fbd4af90.png)
