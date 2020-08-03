@@ -1,6 +1,6 @@
 # 프로젝트 세팅
 ## - 프로젝트 생성
-1. import project from git
+1. project import from git
 2. set directory to local workspace (default : C:\Users\user\git\Spring-User-Board)
 3. import as general project
 4. Project -> Configure -> Convert to Maven Project
@@ -16,7 +16,7 @@
 1. Repository 오류 시 다운로드
 
 ## - 데이터베이스 (MySQL)
-1. context-datasource.xml 파일 수정
+1. /resources/config/properties/application.properties 파일 수정
 2. Time Server Zone 은 Asia/Seoul
 3. table create 쿼리 및 data insert 문 첨부
 
