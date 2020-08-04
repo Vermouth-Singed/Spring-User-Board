@@ -22,6 +22,6 @@ yarn-error.log*
 
 .classpath
 .settings
-/target/
+target
 .project
 package-lock.json
