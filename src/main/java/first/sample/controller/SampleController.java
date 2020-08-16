@@ -49,14 +49,14 @@ public class SampleController {
 		return vm;
 	}
 	
-	@RequestMapping(value="loginUser.do", method=RequestMethod.POST)
-	public @ResponseBody SampleViewmodel loginUser(@RequestBody SampleViewmodel vm, HttpSession session){
+	@RequestMapping(value="loginUser.do", method=RequestMethod.GET)
+	public @ResponseBody SampleViewmodel loginUser(SampleViewmodel vm, HttpSession session){
 		vm.setStatus(sampleService.loginUser(vm.getUserId(),vm.getUserPassword(),session));
 		return vm;
 	}
 	
-	@RequestMapping(value="logoutUser.do", method=RequestMethod.POST)
-	public @ResponseBody SampleViewmodel logoutUser(@RequestBody SampleViewmodel vm, HttpSession session){
+	@RequestMapping(value="logoutUser.do", method=RequestMethod.GET)
+	public @ResponseBody SampleViewmodel logoutUser(SampleViewmodel vm, HttpSession session){
 		vm.setStatus(sampleService.logoutUser(session));
 		return vm;
 	}

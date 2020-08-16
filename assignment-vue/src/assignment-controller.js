@@ -77,7 +77,12 @@ new Vue({
         return;
       }
 
-      Axios.post("loginUser.do",{userId:this.userVO.user_id,userPassword:this.userVO.user_password}).
+      Axios.get("loginUser.do",{
+        params: {
+          userId:this.userVO.user_id,
+          userPassword:this.userVO.user_password
+        }
+      }).
       then(response => {
         let status = response.data.status;
 
@@ -94,7 +99,7 @@ new Vue({
     },
     fnLogoutUser: function(){
       if(confirm("로그아웃하시겠습니까?")){
-        Axios.post("logoutUser.do",{}).
+        Axios.get("logoutUser.do").
         then(() => {
           alert("로그아웃 완료");
 
